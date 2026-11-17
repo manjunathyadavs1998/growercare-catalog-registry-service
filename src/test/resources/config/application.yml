@@ -1,0 +1,16 @@
+# Test values for the environment variables application.yml reads (SPEC-PLAT-06 R77). Tests override the database
+# with Testcontainers, decode JWTs with TestJwts and replace IAM with a stub resolver.
+DB_URL: jdbc:postgresql://set-by-testcontainers.invalid/none
+DB_APP_USER: set-by-testcontainers
+DB_APP_PASSWORD: set-by-testcontainers
+GC_CDC_ROLE: gc_cdc
+OIDC_ISSUER_URI: http://issuer.test.invalid/realms/growercare
+OIDC_JWKS_URI: http://issuer.test.invalid/realms/growercare/protocol/openid-connect/certs
+OIDC_TOKEN_URI: http://issuer.test.invalid/realms/growercare/protocol/openid-connect/token
+IAM_BASE_URL: http://iam.test.invalid
+IAM_CLIENT_ID: catalog-registry-service
+IAM_CLIENT_SECRET: test-secret
+REDIS_HOST: redis.test.invalid
+REDIS_PASSWORD: test
+GC_INTERNAL_CLIENTS: erp-sync,case-service
+GC_IMPORT_CLIENTS: erp-sync
