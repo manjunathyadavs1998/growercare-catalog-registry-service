@@ -21,7 +21,9 @@ class InternalCatalogIT extends CatalogApiTestBase {
                 .andExpect(jsonPath("$.version").value(1))
                 .andExpect(jsonPath("$.registrations.length()").value(2))
                 .andExpect(jsonPath("$.registrations[0].countryCode").value("BR"))
-                .andExpect(jsonPath("$.registrations[1].countryCode").value("IN"));
+                .andExpect(jsonPath("$.registrations[1].countryCode").value("IN"))
+                .andExpect(jsonPath("$.registrations[1].registrationNo").value("CIR-123456/2024"))
+                .andExpect(jsonPath("$.registrations[1].version").value(1));
     }
 
     @ParameterizedTest(name = "CAT-E21 {0}/{1} → {2}")

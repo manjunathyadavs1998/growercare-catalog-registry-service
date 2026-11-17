@@ -173,7 +173,7 @@
           },
           "registrations" : {
             "items" : {
-              "$ref" : "#/components/schemas/RegistrationView"
+              "$ref" : "#/components/schemas/RegistrationReplicaView"
             },
             "type" : "array"
           },

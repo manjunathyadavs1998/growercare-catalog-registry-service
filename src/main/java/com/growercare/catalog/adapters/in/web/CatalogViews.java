@@ -51,11 +51,13 @@ final class CatalogViews {
     /** R20 / R10: the full product for service clients, with every country's registration. */
     record ProductReplicaView(String productId, String productCode, String buCode, String name, String kind, String status,
                               long version, List<Ingredient> activeIngredients, List<String> packSizes,
-                              List<RegistrationView> registrations) {
+                              List<RegistrationReplicaView> registrations) {
+        /** Registrations carry their own version, so a replica can guard them separately (SPEC-CASE-08 D3). */
         static ProductReplicaView of(ProductReplica r) {
             var p = r.product();
             return new ProductReplicaView(Long.toString(p.productId()), p.productCode(), p.buCode(), p.name(), p.kind().name(),
-                    p.status().name(), p.version(), p.ingredients(), p.packSizes(), r.registrations().stream().map(RegistrationView::of).toList());
+                    p.status().name(), p.version(), p.ingredients(), p.packSizes(),
+                    r.registrations().stream().map(RegistrationReplicaView::of).toList());
         }
     }
 
