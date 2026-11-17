@@ -1,6 +1,6 @@
 # SPEC-CAT-01: Products, registrations and batches
 - **Requirements:** GRW-2 (product master), GRW-3 (registration per country; label detail later), GRW-5 (batch/lot master), Phase 1 PRD journey **J4** and M2
-- **Status:** Agreed
+- **Status:** Implemented
 - **Owner:** catalog-registry-service (new repository `growercare-catalog-registry-service`, port 8086); case-service replicates what it needs (SPEC-CASE-08)
 - **Not in Phase 1:** label rows (crop × pest × dose × PHI) and the label-compliance check GRW-4; recalls GRW-6
 
